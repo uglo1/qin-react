@@ -14,6 +14,6 @@ export const useUser = () => {
   return {
     data,
     error,
-    isLoading: !user && !userError,
+    isLoading: !data && !error,
   };
 };

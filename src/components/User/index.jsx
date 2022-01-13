@@ -23,7 +23,6 @@ export const User = () => {
 
       <h2>投稿した記事一覧</h2>
       <PostsByUserId id={data.id} />
-      <h2>投稿したコメント一覧</h2>
     </div>
   );
 };

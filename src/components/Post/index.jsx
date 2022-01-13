@@ -21,6 +21,8 @@ export const Post = () => {
       <h1>{data?.title}</h1>
       <p>{data?.body}</p>
       <UserByUserId id={data.userId} />
+
+      <h1>コメント一覧</h1>
       <CommentsByPostId id={data.id} />
     </div>
   );

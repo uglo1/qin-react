@@ -12,8 +12,6 @@ export const PostsByUserId = (props) => {
 
   if (isEmpty) return <div>投稿はありません。</div>;
 
-  console.log(data);
-
   return (
     <ul className="space-y-4">
       {data.map((post) => {

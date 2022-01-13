@@ -1,6 +1,6 @@
-import 'src/styles/globals.css'
-import Head from 'next/head'
-import { Layout } from 'src/components/Layout'
+import "src/styles/globals.css";
+import Head from "next/head";
+import { Layout } from "src/components/Layout";
 
 const MyApp = ({ Component, pageProps }) => {
   return (
@@ -10,10 +10,10 @@ const MyApp = ({ Component, pageProps }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Component {...pageProps}/>
+        <Component {...pageProps} />
       </Layout>
     </>
-  )
-}
+  );
+};
 
-export default MyApp
+export default MyApp;

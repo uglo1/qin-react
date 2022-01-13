@@ -9,12 +9,12 @@ export const UserByUserId = (props) => {
   console.log(data);
 
   if (!data && !error) {
-    return <div>ローディング中</div>;
+    return <div>Loading...</div>;
   }
 
   if (error) {
     return <div>{error.message}</div>;
   }
 
-  return <div>Created By {data.name}</div>;
+  return <div className="text-lg">Created By {data.name}</div>;
 };

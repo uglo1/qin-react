@@ -6,7 +6,7 @@ export const Comment = () => {
   const { data, error, isLoading } = useComment();
 
   if (isLoading) {
-    return <div>ローディング中</div>;
+    return <div>Loading...</div>;
   }
   if (error) {
     return <div>{error.message}</div>;
@@ -18,10 +18,13 @@ export const Comment = () => {
         <title>{data.name}</title>
       </Head>
 
-      <h1>{data.name}</h1>
-      <p>{data.body}</p>
+      <div className="text-lg">
+        {data.name} ({data.name})
+      </div>
 
-      <h2>元の記事</h2>
+      <h1 className="text-3xl font-bold">{data.body}</h1>
+
+      <h2 className="text-lg font-bold mt-10">元の記事</h2>
       <PostByCommentId id={data.postId} />
     </div>
   );

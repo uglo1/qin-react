@@ -4,27 +4,32 @@ import { useUsers } from "src/hooks/useFetchArray";
 export const Users = () => {
   const { data, error, isLoading, isEmpty } = useUsers();
 
-  if(isLoading){
-    return <div>ローディング中</div>
+  if (isLoading) {
+    return <div>Loading...</div>;
   }
-  if(error){
-    return <div>{error.message}</div>
+  if (error) {
+    return <div>{error.message}</div>;
   }
-  if(isEmpty){
-    return <div>データは空です。</div>
+  if (isEmpty) {
+    return <div>データは空です。</div>;
   }
 
   return (
-    <ol>
+    <ul className="grid grid-cols-3 gap-6">
       {data.map((user) => {
-        return(
+        return (
           <li key={user.id}>
             <Link href={`/users/${user.id}`}>
-              <a>{user.name}</a>
+              <a className="block p-4 shadow rounded hover:bg-gray-100">
+                <h1 className="text-xl first-letter:font-bold truncate">
+                  {user.name}
+                </h1>
+                <div className="text-lg truncate">{user.email}</div>
+              </a>
             </Link>
           </li>
-        )
+        );
       })}
-    </ol>
+    </ul>
   );
-}
+};

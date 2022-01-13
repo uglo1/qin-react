@@ -1,9 +1,9 @@
 import Head from "next/head";
-import Link from "next/link";
+import { PostByCommentId } from "src/components/Post/PostByCommentId";
 import { useComment } from "src/hooks/useComment";
 
 export const Comment = () => {
-  const { comment, post, error, isLoading } = useComment();
+  const { data, error, isLoading } = useComment();
 
   if (isLoading) {
     return <div>ローディング中</div>;
@@ -15,16 +15,14 @@ export const Comment = () => {
   return (
     <div>
       <Head>
-        <title>{comment?.name}</title>
+        <title>{data.name}</title>
       </Head>
 
-      <h1>{comment?.name}</h1>
-      <p>{comment?.body}</p>
+      <h1>{data.name}</h1>
+      <p>{data.body}</p>
 
-      <h5>コメントした記事</h5>
-      <Link href={`/posts/${post.id}`}>
-        <a>「{post.title}」</a>
-      </Link>
+      <h2>元の記事</h2>
+      <PostByCommentId id={data.postId} />
     </div>
   );
 };

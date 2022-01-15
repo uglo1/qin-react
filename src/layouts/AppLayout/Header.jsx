@@ -22,15 +22,3 @@ export const Header = () => {
     </header>
   );
 };
-
-// .anchor {
-//   display: inline-block;
-//   padding: 8px 24px;
-//   font-size: 1.2rem;
-// }
-
-// .anchor:hover,
-// .anchor:focus,
-// .anchor:active {
-//   color: #0070f3;
-// }

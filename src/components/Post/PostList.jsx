@@ -1,16 +1,19 @@
 import Link from "next/link";
-import { usePostsByUserId } from "src/hooks/useFetchArray";
+import { useFetchArray } from "src/hooks/useFetchArray";
+import { API_URL } from "src/utils/const";
 
-export const PostsByUserId = (props) => {
-  const { data, error, isLoading, isEmpty } = usePostsByUserId(props.id);
+export const PostList = () => {
+  const { data, error, isLoading, isEmpty } = useFetchArray(`${API_URL}/posts`);
 
-  if (isLoading) return <div>...Loading</div>;
-
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
   if (error) {
     return <div>{error.message}</div>;
   }
-
-  if (isEmpty) return <div>投稿はありません。</div>;
+  if (isEmpty) {
+    return <div>データは空です。</div>;
+  }
 
   return (
     <ul className="space-y-4">

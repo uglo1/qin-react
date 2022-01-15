@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import { Header } from "src/components/Header";
 
 const Index = () => {
   return (
@@ -8,7 +7,6 @@ const Index = () => {
       <Head>
         <title>Index Page</title>
       </Head>
-      <Header />
 
       <h1 className="text-3xl font-bold">
         Application using{" "}

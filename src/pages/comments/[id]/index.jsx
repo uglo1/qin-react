@@ -1,5 +1,4 @@
-import { Header } from "src/components/Header";
-import { Comment } from "src/components/Comment";
+import { CommentDetail } from "src/components/Comment/CommentDetail";
 import { SWRConfig } from "swr";
 import { API_URL } from "src/utils/const";
 
@@ -39,17 +38,16 @@ export const getStaticProps = async (ctx) => {
   };
 };
 
-const CommentId = (props) => {
+const CommentsId = (props) => {
   const { fallback } = props;
 
   return (
     <div>
       <SWRConfig value={{ fallback }}>
-        <Header />
-        <Comment />
+        <CommentDetail />
       </SWRConfig>
     </div>
   );
 };
 
-export default CommentId;
+export default CommentsId;
